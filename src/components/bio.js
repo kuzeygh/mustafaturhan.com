@@ -21,30 +21,51 @@ function Bio() {
           <div
             style={{
               display: `flex`,
-              marginBottom: rhythm(2.5),
+              marginTop: rhythm(2),
+              justifyContent: "space-between",
             }}
           >
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                minWidth: 50,
-                borderRadius: `100%`,
-              }}
-              imgStyle={{
-                borderRadius: `50%`,
-              }}
-            />
-            <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a>
-            </p>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Image
+                fixed={data.avatar.childImageSharp.fixed}
+                alt={author}
+                style={{
+                  marginRight: rhythm(1 / 2),
+                  marginBottom: 0,
+                  minWidth: 50,
+                  borderRadius: `100%`,
+                }}
+                imgStyle={{
+                  borderRadius: `50%`,
+                }}
+              />
+              <div>
+                <p style={{ marginBottom: 0 }}>
+                  Written by <strong>{author}</strong>.
+                </p>
+                <a
+                  style={{ marginRight: rhythm(1 / 4) }}
+                  href={`https://twitter.com/${social.twitter}`}
+                >
+                  Twitter
+                </a>
+                <a
+                  style={{ marginRight: rhythm(1 / 4) }}
+                  href={`https://github.com/mustaphaturhan`}
+                >
+                  Github
+                </a>
+                <a
+                  style={{ marginRight: rhythm(1 / 4) }}
+                  href={`mailto:odunluzikkim@gmail.com`}
+                >
+                  odunluzikkim@gmail.com
+                </a>
+              </div>
+            </div>
+            <div style={{ alignSelf: "center" }}>
+              Thanks <a href="https://www.gatsbyjs.org/">Gatsby</a>.
+            </div>
           </div>
         )
       }}
