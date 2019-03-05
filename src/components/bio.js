@@ -8,8 +8,34 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import styled from "styled-components"
 
 import { rhythm } from "../utils/typography"
+
+const Container = styled.div`
+  display: flex;
+  margin-top: ${rhythm(2)};
+  justify-content: space-between;
+`
+
+const Avatar = styled(Image)`
+  margin-right: ${rhythm(1 / 2)};
+  margin-bottom: 0;
+  min-width: 50px;
+  border-radius: 100%;
+
+  img {
+    border-radius: 50%;
+  }
+`
+const SocialLinks = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    margin-right: ${rhythm(1 / 4)};
+  }
+`
 
 function Bio() {
   return (
@@ -18,55 +44,23 @@ function Bio() {
       render={data => {
         const { author, social } = data.site.siteMetadata
         return (
-          <div
-            style={{
-              display: `flex`,
-              marginTop: rhythm(2),
-              justifyContent: "space-between",
-            }}
-          >
+          <Container>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <Image
-                fixed={data.avatar.childImageSharp.fixed}
-                alt={author}
-                style={{
-                  marginRight: rhythm(1 / 2),
-                  marginBottom: 0,
-                  minWidth: 50,
-                  borderRadius: `100%`,
-                }}
-                imgStyle={{
-                  borderRadius: `50%`,
-                }}
-              />
+              <Avatar fixed={data.avatar.childImageSharp.fixed} alt={author} />
               <div>
                 <p style={{ marginBottom: 0 }}>
                   Written by <strong>{author}</strong>.
                 </p>
-                <a
-                  style={{ marginRight: rhythm(1 / 4) }}
-                  href={`https://twitter.com/${social.twitter}`}
-                >
-                  Twitter
-                </a>
-                <a
-                  style={{ marginRight: rhythm(1 / 4) }}
-                  href={`https://github.com/mustaphaturhan`}
-                >
-                  Github
-                </a>
-                <a
-                  style={{ marginRight: rhythm(1 / 4) }}
-                  href={`mailto:odunluzikkim@gmail.com`}
-                >
-                  odunluzikkim@gmail.com
-                </a>
+                <SocialLinks>
+                  <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
+                  <a href={`https://github.com/mustaphaturhan`}>Github</a>
+                  <a href={`mailto:odunluzikkim@gmail.com`}>
+                    odunluzikkim@gmail.com
+                  </a>
+                </SocialLinks>
               </div>
             </div>
-            <div style={{ alignSelf: "center" }}>
-              Thanks <a href="https://www.gatsbyjs.org/">Gatsby</a>.
-            </div>
-          </div>
+          </Container>
         )
       }}
     />
