@@ -6,6 +6,7 @@ fairyGatesTheme.overrideThemeStyles = () => {
     a: {
       backgroundImage: "none",
       textShadow: "none",
+      color: "#6b3c9c",
     },
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
