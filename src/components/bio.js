@@ -53,10 +53,8 @@ function Bio() {
                 </p>
                 <SocialLinks>
                   <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
-                  <a href={`https://github.com/mustaphaturhan`}>Github</a>
-                  <a href={`mailto:odunluzikkim@gmail.com`}>
-                    odunluzikkim@gmail.com
-                  </a>
+                  <a href={`https://github.com/${social.github}`}>Github</a>
+                  <a href={`mailto:${social.email}`}>odunluzikkim@gmail.com</a>
                 </SocialLinks>
               </div>
             </div>
@@ -81,6 +79,8 @@ const bioQuery = graphql`
         author
         social {
           twitter
+          github
+          email
         }
       }
     }
