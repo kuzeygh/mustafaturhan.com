@@ -21,6 +21,10 @@ const OldPosts = styled.ul`
   margin: 0;
 `
 
+const Title = styled.h1`
+  color: var(--text-headerTitle);
+`
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -33,7 +37,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
+        <Title>{post.frontmatter.title}</Title>
         <Date style={scale(-1 / 5)}>{post.frontmatter.date}</Date>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr style={{ marginBottom: rhythm(1) }} />

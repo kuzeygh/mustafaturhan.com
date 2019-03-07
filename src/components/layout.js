@@ -15,6 +15,8 @@ const Title = styled.h1`
   margin-top: 0;
   display: flex;
   align-items: center;
+  color: var(--text-headerTitle);
+  letter-spacing: 1px;
 `
 
 const HeaderLink = styled(Link)`

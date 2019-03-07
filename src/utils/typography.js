@@ -1,4 +1,4 @@
-import './global.css';
+import "./global.css"
 import Typography from "typography"
 import fairyGatesTheme from "typography-theme-fairy-gates"
 
@@ -7,14 +7,17 @@ fairyGatesTheme.overrideThemeStyles = () => {
     a: {
       backgroundImage: "none",
       textShadow: "none",
-      color: 'var(--textLink)',
+      color: "var(--textLink)",
     },
     hr: {
-      background: 'var(--hr)',
+      background: "var(--hr)",
+    },
+    "h1, h2, h3, h4, h5, h6": {
+      color: "var(--textLink)",
     },
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
-    },
+    }
   }
 }
 
