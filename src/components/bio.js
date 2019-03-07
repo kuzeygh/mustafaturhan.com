@@ -14,7 +14,6 @@ import { rhythm } from "../utils/typography"
 
 const Container = styled.div`
   display: flex;
-  margin-top: ${rhythm(2)};
   justify-content: space-between;
 `
 
