@@ -8,6 +8,7 @@ fairyGatesTheme.overrideThemeStyles = () => {
       backgroundImage: "none",
       textShadow: "none",
       color: "var(--textLink)",
+      cursor: "default"
     },
     hr: {
       background: "var(--hr)",

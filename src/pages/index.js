@@ -1,9 +1,28 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+
+const Post = styled.div`
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  &:first-child {
+    border-top: 0;
+    border-bottom: 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
+`
+
+const PostText = styled.p`
+  margin: 0;
+  padding: 1.5em 0;
+`
 
 class BlogIndex extends React.Component {
   render() {
@@ -18,28 +37,16 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `front-end`, `javascript`, `react`]}
         />
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(0.2),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <span style={{ display: "flex", marginBottom: rhythm(0.5) }}>
-                <small>{node.frontmatter.date}</small>
-              </span>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-              <hr style={{ background: "rgba(0, 0, 0, 0.1)" }} />
-            </div>
+            <Post key={node.fields.slug}>
+              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <PostText
+                  dangerouslySetInnerHTML={{
+                    __html: node.html,
+                  }}
+                />
+              </Link>
+            </Post>
           )
         })}
       </Layout>
@@ -59,14 +66,13 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
+          html
           fields {
             slug
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            description
           }
         }
       }

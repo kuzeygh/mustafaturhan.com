@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Bir kaç şey`,
+    title: `mustafa's microblog`,
     author: `Mustafa Turhan`,
-    description: `Bir gün fark ettim ki ortadan kaybolmayı, geri kalan her şeyden daha çok seviyorum.`,
+    description: `oh, nevermind. like i said, "hello world. i should write a microblog because there is nobody to write a bad comment in here."`,
     siteUrl: `https://www.mustafaturhan.com`,
     social: {
       twitter: `mustaphaturhan`,
