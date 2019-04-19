@@ -61,7 +61,6 @@ module.exports = {
         icon: `content/assets/logo.png`,
       },
     },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
