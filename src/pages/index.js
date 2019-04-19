@@ -19,7 +19,7 @@ const Post = styled.div`
   }
 `
 
-const PostText = styled.p`
+const PostText = styled.div`
   margin: 0;
   padding: 1.5em 0;
 `
@@ -64,6 +64,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          excerpt
           html
           fields {
             slug
