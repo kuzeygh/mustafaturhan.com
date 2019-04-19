@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
@@ -39,13 +39,11 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           return (
             <Post key={node.fields.slug}>
-              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                 <PostText
                   dangerouslySetInnerHTML={{
                     __html: node.html,
                   }}
                 />
-              </Link>
             </Post>
           )
         })}
